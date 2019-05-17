@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Tables>
+    <Table>
+        <Name>traszkagrzebieniasta</Name>
+        <DisplayName>Traszka grzebieniasta</DisplayName>
+    </Table>
+    <Table>
+        <Name>sasankaotwarta</Name>
+        <DisplayName>Sasanka otwarta</DisplayName>
+    </Table>
+    <Table>
+        <Name>lelek</Name>
+        <DisplayName>Lelek</DisplayName>
+    </Table>
+</Tables>
