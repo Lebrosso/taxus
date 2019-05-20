@@ -1,16 +1,13 @@
 package application;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import java.io.File;
 import java.sql.Date;
 import java.sql.SQLException;
 
 public class ReportService {
 
-      DbConnector conn;
+    DbConnector conn;
+
     {
         try {
             conn = DbConnector.getInstance();
@@ -19,25 +16,17 @@ public class ReportService {
         }
     }
 
-    public Tables getSpeciesForReport() throws JAXBException {
-
-        JAXBContext jaxbContext = JAXBContext.newInstance(Tables.class);
-        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-
-        Tables tables = (Tables) jaxbUnmarshaller.unmarshal(new File("tables.xml") );
-
-        for(Table tab : tables.getTables())
-        {
-            System.out.println(tab.getName());
-            System.out.println(tab.getDisplayName());
+    public void getCount(Date dateTo, Date dateFrom, String voivodeship, String county,int userId, Table table) {
+        try {
+            conn.getCount(dateTo,dateFrom,voivodeship,county,userId,table);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-        return tables;
     }
 
-    public void getCount(){
+    public void getCount(Date dateTo, Date dateFrom, String voivodeship, String county, Table table) {
         try {
-            conn.getCount(new Date(2017), new Date(2019), "2", "1", 2, "lelek" );
+            conn.getCount(dateTo,dateFrom,voivodeship,county,table);
         } catch (SQLException e) {
             e.printStackTrace();
         }

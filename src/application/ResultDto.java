@@ -1,8 +1,9 @@
 package application;
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.Data;
-
-@Data
+@Getter
+@Setter
 public class ResultDto {
     private String name;
     private String monitoring;

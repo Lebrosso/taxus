@@ -1,9 +1,5 @@
 package application;
 
-import javax.xml.bind.annotation.*;
-
-@XmlRootElement(name = "Table")
-@XmlType(propOrder = {"name", "displayName"})
 public class Table {
 
     private String name;
@@ -12,7 +8,6 @@ public class Table {
     public String getName() {
         return name;
     }
-    @XmlElement(name = "name")
     public void setName(String name) {
         this.name = name;
     }
@@ -21,7 +16,6 @@ public class Table {
         return displayName;
     }
 
-    @XmlElement(name = "displayName")
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }

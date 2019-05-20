@@ -9,23 +9,17 @@ import jxl.write.WriteException;
 import java.io.File;
 import java.io.IOException;
 
-
 public class ReportGenerator {
 
     private static final String EXCEL_FILE_LOCATION = "Raport.xlsx";
 
     public void generate() {
 
-        //1. Create an Excel file
         WritableWorkbook myFirstWbook = null;
         try {
 
             myFirstWbook = Workbook.createWorkbook(new File(EXCEL_FILE_LOCATION));
-
-            // create an Excel sheet
             WritableSheet excelSheet = myFirstWbook.createSheet("Sheet 1", 0);
-
-            // add something into the Excel sheet
             Label label = new Label(0, 0, "lp.");
             excelSheet.addCell(label);
 
